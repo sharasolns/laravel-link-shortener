@@ -1,6 +1,6 @@
 <?php
 
-namespace Sharasolns\Link\Shortener\Facades;
+namespace Sharasolns\LinkShortener\Facades;
 
 class SmApi
 {

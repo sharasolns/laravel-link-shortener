@@ -1,8 +1,8 @@
 <?php
 
-namespace Sharasolns\Link\Shortener\Links;
+namespace Sharasolns\LinkShortener\Links;
 
-use Sharasolns\Link\Shortener\Facades\SmApi;
+use Sharasolns\LinkShortener\Facades\SmApi;
 
 class Shortener
 {
