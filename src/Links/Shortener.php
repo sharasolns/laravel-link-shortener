@@ -20,7 +20,7 @@ class Shortener
     public function shortenLink($url, $domain_id=0){
         $smApi = new SmApi($this->apiKey);
         $data = [
-          'link'=>$url,
+          'url'=>$url,
           'domain_id'=>$domain_id
         ];
         return $smApi->makePostRequest('links/store', $data);

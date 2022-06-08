@@ -9,6 +9,7 @@ class SmApi
 
     public function __construct($apiKey)
     {
+        $this->apiKey = $apiKey;
     }
 
     public function makePostRequest($endPoint, $data){
@@ -35,14 +36,19 @@ class SmApi
         curl_setopt($curl, CURLOPT_CUSTOMREQUEST, $method);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($curl, CURLOPT_HEADER, 0);
-        curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+        curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data));
         curl_setopt($curl,CURLOPT_HTTPHEADER, $header);
         $response = curl_exec($curl);
         $status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         if($status>199 && $status <205){
             return json_decode($response);
         }else{
-            throw new \Exception($response);
+            if($status != 500) {
+                throw new \Exception('Error returned with status '.$status, substr(strip_tags($response), 0, 1000));
+
+            } else {
+                throw new \Exception('Error returned with status '.$status.substr(strip_tags($response), 0, 1000));
+            }
         }
     }
 }
