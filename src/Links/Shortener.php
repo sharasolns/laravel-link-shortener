@@ -1,10 +1,10 @@
 <?php
 
-namespace Sharasolns\Links;
+namespace Sharasolns\Link\Shortener\Links;
 
-use Sharasolns\Facades\SmApi;
+use Sharasolns\Link\Shortener\Facades\SmApi;
 
-class LinkShortener
+class Shortener
 {
     protected $apiKey;
     public function __construct($apiKey)
