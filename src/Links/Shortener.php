@@ -15,14 +15,16 @@ class Shortener
      * Shorten a link
      * @param int $domain_id
      * @param string $url
-    */
+     */
 
     public function shortenLink($url, $domain_id=0){
         $smApi = new SmApi($this->apiKey);
         $data = [
-          'url'=>$url,
-          'domain_id'=>$domain_id
+            'url'=>$url
         ];
+        if($domain_id){
+            $data['domain_id'] = $domain_id;
+        }
         return $smApi->makePostRequest('links/store', $data);
     }
 }
