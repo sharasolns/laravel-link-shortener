@@ -1,6 +1,7 @@
 {
   "name": "sharasolns/php-link-shortener",
   "description": "Link shortener for php",
+  "keywords": ["php link", "link shortener", "url shortener"],
   "require": {
     "php": ">=7.4"
   }
