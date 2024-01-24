@@ -4,7 +4,7 @@ namespace Sharasolns\LinkShortener\Facades;
 
 class SmApi
 {
-    protected $base_url = "https://sm.ke/api";
+    protected $base_url = "https://hz.ke/api";
     protected $apiKey;
 
     public function __construct($apiKey)
